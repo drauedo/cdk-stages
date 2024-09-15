@@ -7,7 +7,7 @@ class MyPipelineStack(cdk.Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        pipeline =  CodePipeline(self, "Pipeline",
+        CodePipeline(self, "Pipeline",
                         pipeline_name="MyPipeline",
                         synth=ShellStep("Synth",
                             input=CodePipelineSource.git_hub("drauedo/cdk-stages", "main"),
